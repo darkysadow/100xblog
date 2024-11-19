@@ -1,0 +1,17 @@
+.padding, section, header, footer {
+    box-sizing: border-box;
+    padding-right: $containerPaddingS;
+    padding-left: $containerPaddingS;
+    max-width: 142rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    @media (min-width: 430px) {
+        padding-right: $containerPaddingM;
+        padding-left: $containerPaddingM;
+    }
+    @media (min-width: $tabletLargeP1) {
+        padding-right: $containerPadding;
+        padding-left: $containerPadding;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="preload" href="./assets/sprite.svg" as="image" />
+    <link rel="stylesheet" href="./dist/tailwind.css" />
+    <link rel="stylesheet" href="./dist/style.css" />
+</head>
+
+<body>
+    <div class="modal-menu flex flex-col">
+        <div class="modal-menu__header flex items-center justify-between">
+            <figure class="modal-menu__logo">
+                <a href="#">
+                    <img width="168" height="33" src="./assets/img/logo.svg" alt="logo">
+                </a>
+            </figure>
+            <div class="modal-menu__close">
+                <svg width="15" height="36">
+                    <use href="./assets/sprite.svg#close"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="modal-menu__body">
+            <div class="modal-menu__vector">
+                <img width="613" height="420" src="./assets/img/icons/menu-vector.svg" alt="vector">
+            </div>
+            <h2>Hallo!</h2>
+            <ul >
+                <li><a href="#">Über Uns</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+            <div class="modal-menu__btn">
+                <a href="#" class="btn">Mach Mit
+                    <svg width="15" height="15">
+                        <use href="./assets/sprite.svg#circle-arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="modal-menu__footer">
+            <ul class="flex items-center">
+                <li>
+                    <a href="#" aria-label="twitter">
+                        <svg width="24" height="24">
+                            <use href="./assets/sprite.svg#twitter"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.linkedin.com/company/insurecompact/" aria-label="linkedin">
+                        <svg width="24" height="24">
+                            <use href="./assets/sprite.svg#linkedin"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex items-center">
+                <li><a href="#">Datenschutz</a></li>
+                <li><a href="#">Impressium</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="minimize" id="minimize">
+        <div class="scroll">
+        </div>
+    </div>
+
+    <script src="./dist/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+// container
+$containerPaddingS: 1.6rem;
+$containerPaddingM: 3.5rem;
+$containerPadding: 6rem;
+
+// Sizing
+$containerMaxWidth: 1300;
+$K2Large: 1921px;
+$deskXLarge: 1920px;
+$deskXLargeP1: calc($deskXLarge / 1px) + 1px;
+$deskLarge: 1599px;
+$deskLargeP1: calc($deskLarge / 1px) + 1px;
+$desktop: 1440px;
+$desktopP1: calc($desktop / 1px) + 1px;
+$tabletLarge: 1280px;
+$tabletLargeP1: calc($tabletLarge / 1px) + 1px;
+$tablet: 1024px; 
+$tabletP1: calc($tablet / 1px) + 1px; 
+$tabletSmall: 767px;
+$tabletSmallP1: calc($tabletSmall / 1px) + 1px;
+$mobile: 640px;
+$mobileP1: calc($mobile / 1px) + 1px;
+$mobileSmall: 420px;
+$mobileSmallP1: calc($mobileSmall / 1px) + 1px;
+
+// Adaptive Property Sizing
+$adaptivePropertyMaxViewport: $containerMaxWidth;
+$adaptivePropertyMinViewport: 430;
+
+// Colors
+
+// base
+$white: #ffffff;
+$black: #000000;
+$transparent: rgba(0, 0, 0, 0);
+
+$textColor: #293B48;
+$primary: #6D83FF;
+$secondary: #EDF2F3;
+$secondary: #F6F8F8;
+$filterColor: #E8F3F5;
+$lineColor: #00000033;
+$windowLineColor: #2637984D; 
+$border:#CDDFE1;
+$lexiconLink: #0F3B44;
+$footerBg: #282A2B;
+$buttonYellow: #F8D65F;
+$buttonGreen: #69C292;
+$buttonRed: #F15F5F;
+$bottomCtaWindowBg: #5971F80F;
+$inputBorder: #B5C8CC;
+
+// Fonts
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Inter', sans-serif;
