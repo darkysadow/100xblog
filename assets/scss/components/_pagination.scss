@@ -15,7 +15,7 @@
     &__show {
         font-size: 1.6rem;
         line-height: 1.5;
-        color: $filterText;
+        color: $textMuted;
         gap: 0.7rem;
         padding-right: 1.5rem;
         position: relative;
@@ -27,12 +27,12 @@
         }
 
         & > select {
-            background-color: $tertinary;
+            background-color: $selectBg;
             outline: none;
             border-radius: 0.6rem;
             font-size: 1.7rem;
             line-height: 1.35;
-            color: $quartenary;
+            color: $textSecondary;
             padding: 0.4rem 2.7rem 0.4rem 1.2rem;
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3984 1.92144L5.92188 6.2105C5.78125 6.32769 5.64062 6.37457 5.5 6.37457C5.38281 6.37457 5.24219 6.32769 5.125 6.23394L0.648438 1.94488C0.414063 1.73394 0.414063 1.35894 0.625 1.148C0.835938 0.913628 1.1875 0.913628 1.42188 1.12457L5.5 5.03863L9.625 1.10113C9.83594 0.890191 10.2109 0.890191 10.4219 1.12457C10.6328 1.3355 10.6328 1.7105 10.3984 1.92144Z' fill='%230F3B44'/%3E%3C/svg%3E%0A");
@@ -58,7 +58,7 @@
             @media(min-width: $tabletSmallP1) {
                 @include centerByVertical();
                 @include pseudoInit(0.1rem, 74%);
-                background-color: $paginationDivider;
+                background-color: $borderMuted;
                 right: 0;
             }
         }
@@ -70,7 +70,7 @@
         flex-direction: row;
         gap: 1rem;
         font-size: 1.6rem;
-        color: $filterText;
+        color: $textMuted;
 
         @media (min-width: $tabletSmallP1) {
             font-size: 1.4rem;
@@ -78,12 +78,12 @@
         }
 
         input {
-            border: 1px solid #AFC0C4;
+            border: 1px solid $borderSecondary;
             border-radius: .6rem;
             width: 4.7rem;
             text-align: center;
             padding: 2px;
-            color: ($filterText, 0.7);
+            color: ($textMuted, 0.7);
             font-weight: 500;
             font-size: 1.6rem;
             outline: none;

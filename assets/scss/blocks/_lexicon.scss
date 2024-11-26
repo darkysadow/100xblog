@@ -112,7 +112,7 @@
                     margin-top: 0;
                 }
                 a { 
-                    color: rgba($lexiconLink, 0.7);
+                    color: rgba($linkSecondary, 0.7);
                     transition: .3s all;
                     &:hover {
                         color: $primary;
@@ -133,7 +133,7 @@
 
     &__head {
         h2 {
-            background-color: $secondary;
+            background-color: $quartenary;
             border: 1px solid rgba($primary, 0.35);
             padding: 1.3rem 3rem;
             border-radius: 1rem;

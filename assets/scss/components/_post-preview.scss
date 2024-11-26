@@ -55,8 +55,8 @@
     &__category,
     &__category:visited {
         padding: 1rem 1.5rem;
-        background-color: $filterColor;
-        color: $textColor;
+        background-color: $secondary;
+        color: $text;
         height: fit-content;
         border-radius: 10rem;
         font-size: 1.4rem;
@@ -107,7 +107,7 @@
         padding-right: 2rem;
         padding-bottom: 2rem;
         pointer-events: none;
-        background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, $black 0%, $transparent 100%);
         border-bottom-right-radius: 2.4rem;
         border-bottom-left-radius: 2.4rem;
 
@@ -127,11 +127,11 @@
 
     &__title {
         & a {
-            color: $textColor !important;
+            color: $text !important;
         }
 
         & a:visited {
-            color: $textColor !important;
+            color: $text !important;
         }
     }
 
