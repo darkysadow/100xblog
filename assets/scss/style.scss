@@ -6,7 +6,21 @@
 @import "_fonts";
 @import "_typography";
 @import "_layout";
-@import "blocks/example";
+@import "blocks/blogs";
+@import "blocks/long-text";
+@import "blocks/bottom-cta";
+@import "blocks/hero";
+@import "blocks/footer";
+@import "blocks/header";
+@import "blocks/two-columns";
+@import "blocks/imprint";
+@import "blocks/impressium";
+@import "blocks/lexicon";
+@import "blocks/single-blog";
 
 @import "components/base/btn";
 @import "components/base/field";
+@import "components/base/modal.scss";
+@import "components/base/accordion.scss";
+@import "components/post-preview";
+@import "components/pagination";

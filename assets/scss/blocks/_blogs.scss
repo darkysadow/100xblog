@@ -1,0 +1,108 @@
+.blogs {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin-top: 5.7rem;
+    padding-top: 4.9rem;
+
+    // .blogs__results
+
+    &__results {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @include padTopPadBot(1.1rem, 4.9rem);
+        width: 100%;
+        color: $filterText;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+    }
+
+    // .blogs__bottom-pagination
+
+    &__bottom-pagination {
+        @include centerDiv();
+        margin-top: 12.2rem;
+    }
+
+    // .blogs__post-grid
+
+    &__post-grid {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8.8rem 3rem;
+        position: relative;
+    }
+
+    // .blogs__line
+
+    &__line {
+        @include blockLineStyles($containerPaddingS);
+        top: 0;
+
+        @media (min-width: 430px) {
+            width: calc(100% - 0.8rem - $containerPaddingM * 2);
+        }
+
+        @media (min-width: $tabletLargeP1) {
+            width: calc(100% - 0.8rem - $containerPadding * 2);
+        }
+
+        &:before,
+        &:after {
+            @include pseudoInit(1.4rem, 1.4rem);
+            border-radius: 100%;
+            background-color: $primary;
+            transform: translateY(-50%);
+            top: 0;
+        }
+
+        &:before {
+            left: -0.1rem;
+        }
+
+        &::after {
+            right: -0.1rem;
+        }
+
+        &--hide-dots {
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+
+        // .blogs__line--small
+
+        &--small {
+            @include blockLineStyles($containerPaddingS);
+            bottom: 5rem;
+
+            @media (min-width: $mobileSmall) and (max-width: $tabletLarge) {
+                width: calc(75% - $containerPadding * 2);
+            }
+
+            @media (min-width: $tabletLarge) {
+                width: calc(59.789% - $containerPaddingM * 2);
+            }
+        }
+
+        // .blogs__line--hide-visuals
+
+        &--hide-visuals {
+            @extend .blogs__line;
+            &:before,
+            &:after {
+                display: none;
+            } 
+        }
+    }
+
+    // .blogs__bottom-pagination
+
+    &__bottom-pagination {
+        @include centerDiv();
+    }
+}

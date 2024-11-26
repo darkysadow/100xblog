@@ -1,0 +1,164 @@
+.lexicon {
+    padding-bottom: 8rem;
+    @media(min-width: $tabletSmallP1) {
+        padding-bottom: 16rem;
+    }
+
+    // .lexicon__row
+
+    &__row {
+        gap: 2.5rem;
+        @media(min-width: $tabletSmallP1) {
+            margin-top: 4rem;
+        }
+    }
+
+    // .lexicon__line
+
+    &__line {
+        position: relative;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($black, .2);
+        display: none;
+        @media(min-width: $tabletSmallP1) {
+            display: block;
+        }
+    }
+
+    // .lexicon__toc
+
+    &__toc {
+        background-color: rgba($primary, 0.07);
+        border: 1px solid rgba($primary, 0.35);
+        border-radius: 2rem;
+        padding: 2.2rem;
+        margin-bottom: 4.7rem;
+        @media(min-width: $tabletP1) {
+            padding: 4rem 2rem 1.5rem;
+            position: sticky;
+            top: 10rem;
+            min-width: 15.4rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        h2 {
+            @include adaptiveProperty('font-size', 30, 22);
+            line-height: 1.12;
+
+        }
+        ul {
+            @include centerDiv();
+            margin: 1.5rem auto 0;
+            gap: 1.2rem 2.6rem;
+            flex-wrap: wrap;
+            text-align: left;
+            @media(min-width: $tabletP1) {
+                display: block;
+                gap: 0;
+                column-gap: 3.5rem;
+                column-count: 2;
+                margin: 3rem auto 0;
+                max-width: 6.3rem;
+            }
+            li {
+                margin-top: 0;
+                padding: 0;
+                font-weight: 700;
+                line-height: 1.5;
+                @media(min-width: $tabletP1) {
+                    margin-bottom: 1.5rem;
+                }
+                a {
+                    color: rgb(var(--primary));
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // .lexicon__content
+
+    &__content {
+        @media(min-width: $tabletSmallP1) {
+            flex-grow: 1;
+            width: 100%;
+            column-count: 2;
+            column-gap: 4.1rem;
+        }
+    }
+
+    // .lexicon__item
+
+    &__item {
+        margin-bottom: 6rem;
+        break-inside: avoid-column;
+        ul {
+            padding: 2rem 2.9rem 0 0rem;
+            @media(min-width: $tabletSmallP1) {
+                padding: 2rem 3.1rem 0;
+            }
+            li {
+                padding: 0;
+                font-size: 1.8rem;
+                line-height: 1.7;
+                margin-top: 1rem;
+                &::after {
+                    display: none;
+                }
+                &:first-child {
+                    margin-top: 0;
+                }
+                a { 
+                    color: rgba($lexiconLink, 0.7);
+                    transition: .3s all;
+                    &:hover {
+                        color: $primary;
+                    }
+                    svg {
+                        display: inline-block;
+                        margin-left: 1.2rem;
+                        path {
+                            fill: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .lexicon__head
+
+    &__head {
+        h2 {
+            background-color: $secondary;
+            border: 1px solid rgba($primary, 0.35);
+            padding: 1.3rem 3rem;
+            border-radius: 1rem;
+            line-height: 1;
+            color: $primary;
+            @include adaptiveProperty('font-size', 45, 45);
+        }
+    }
+}
+
+body:has(.hero-lexicon--show-icons) {
+    .lexicon__line {
+        &:before,
+        &:after {
+            @include centerByPosition();
+            content: '';
+            left: 0;
+            @include squareDiv(1.4rem);
+            border-radius: 50%;
+            background-color: $primary;
+        }
+        &:after {
+            left: unset;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+    }
+}

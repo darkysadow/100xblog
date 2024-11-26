@@ -1,0 +1,119 @@
+.impressium {
+    @include padTopPadBot(0, 6rem);
+    position: relative;
+    z-index: 3;
+    max-width: 140rem;
+    color: $lexiconLink;
+    @media (min-width: $tabletSmallP1) {
+        @include padTopPadBot(12.6rem, 12rem);
+    }
+
+    //.impressium__content
+    &__content {
+        position: relative;
+        z-index: 2;
+        h1 {
+            @include adaptiveProperty('font-size', 56, 40);
+            letter-spacing: 0;
+            font-weight: 600;
+            line-height: 1.2;
+            mark {
+                color: $primary;
+                display: block;
+                @media(min-width: $tabletSmallP1) {
+                    display: inline;
+        
+                }
+            }
+            & + h2 {
+                margin-top: 3rem;
+                @media(min-width: $tabletSmallP1) {
+                    margin-top: 8rem;
+                }
+                & + h3 {
+                    margin-top: 2rem;
+                    @media(min-width: $tabletSmallP1) {
+                        margin-top: 3.8rem;
+                    }
+        
+                }
+            }
+        }
+        h2 {
+            margin-top: 5rem;
+            @include adaptiveProperty('font-size', 24, 24);
+            font-weight: 700;
+            @media(min-width: $tabletSmallP1) {
+                margin-top: 5.6rem;
+            }
+        }
+        h3, h4,h5,h6 {
+            margin-top: 5rem;
+            @include adaptiveProperty('font-size', 18, 18);
+            font-weight: 700;
+            line-height: 1.5;
+            @media(min-width: $tabletSmallP1) {
+                margin-top: 3.8rem;
+            }
+        }
+        p,li {
+            font-size: 1.8rem;
+            @media(max-width: $mobileSmall) {
+                font-size: 1.6rem;
+            }
+        
+        }
+        strong {
+            font-weight: 500;
+            color: rgba($lexiconLink, 0.6);
+        }
+        a {
+            color: $primary;
+            font-weight: 500;
+            word-break: break-all;
+            &:hover {
+        
+            text-decoration: underline;
+            }
+        }
+        ul,ol {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+            @media(max-width: $mobileSmall) {
+                margin-bottom: 3rem;
+            }
+            li {
+                margin-top: 2rem;
+                &:has(>strong) {
+                    &:after {
+                        opacity: 0.6;
+                    }
+        
+                }
+                &:after {
+                    background-color: $lexiconLink;
+                    top: 1.2rem;
+                }
+                li {
+                    margin-top: 0.8rem;
+                }
+            }
+        }
+        ul {
+            padding-left: 1rem;
+            @media(max-width: $mobileSmall) {
+                padding-left: 0rem;
+            }
+        }
+        
+        p:has(strong) {
+            & + ul {
+                margin-top: 0;
+                li {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+}

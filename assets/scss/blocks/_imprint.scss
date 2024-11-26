@@ -1,0 +1,195 @@
+.imprint {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    // .imprint--revert
+
+    &--revert {
+        @extend .imprint;
+        .imprint {
+            &__container {
+                flex-direction: column;
+                @media (min-width: $tabletP1) {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            &__level-vector {
+                left: 0;
+                & > svg {
+                    transform: scaleX(-1);
+                }
+
+                @media (min-width: $tabletP1) {
+                    right: calc(100% - 26vw);
+                }
+            }
+        }
+    }
+
+    // .imprint--hide-visuals
+
+    &--hide-visuals {
+        @extend .imprint;
+        .imprint__level-vector {
+            display: none;
+        }
+    }
+
+    // .imprint__level-vector
+
+    &__level-vector {
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        width: 50%;
+        color: $primary;
+        & > svg {
+            width: 100%;
+        }
+        
+        @media (min-width: $tabletP1) {
+            left: calc(100% - 26vw);
+            top: 25vw;
+            width: 50.8rem;
+            & > svg {
+                width: 50.8rem;
+            }
+        }
+    }
+
+    &__container {
+        @extend .padding;
+        @include padTopPadBot(9.7rem, 8rem);
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        
+        @media (min-width: $tabletP1) {
+            @include padTopPadBot(9.7rem, 30.6rem);
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 12%;
+        }
+    }
+    
+
+    // .imprint__address
+
+    &__address {
+        color: $lexiconLink;
+        position: relative;
+        z-index: 2;
+        @media (min-width: $tabletP1) {
+            width: 61%;
+            
+        }
+        h1 {
+            @include adaptiveProperty('font-size', 75, 28);
+            line-height: 1;
+            margin-bottom: 5rem;
+            @media(min-width: $tabletSmallP1) {
+                margin-bottom: 6rem;
+            }
+        }
+        h2 {
+            @include adaptiveProperty('font-size', 35, 26);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-top: 4rem;
+            @media(min-width: $tabletSmallP1) {
+                margin-top: 5rem;
+            }
+
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: 1.65;
+        }
+        ul,ol {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            li {
+                font-size: 1.8rem;
+            }
+        }
+        a {
+            color: rgb(var(--primary));
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // .imprint__window
+
+    &__window {
+        border-radius: 3.9rem;
+        border-top: 0.5rem;
+        border-bottom: 1.5rem;
+        border-right: 0.1rem;
+        border-left: 0.1rem;
+        border-style: solid;
+        border-color: $primary;
+        aspect-ratio: 344/648;
+        position: relative;
+        width: 90%;
+        background-color: rgba($primary, 0.06);
+        @include centerDiv();
+
+        @media (min-width: $tabletP1) {
+            width: 26%;
+        }
+
+        @media (min-width: $tabletSmallP1) and (max-width: $tabletP1) {
+            width: 50%;
+        }
+
+        &::before {
+            @include pseudoInit(6rem, 0);
+            @include centerByHorizontal();
+            border: 0.5rem solid $primary;
+            bottom: 1.9rem;
+            border-radius: 1rem;
+
+            @media (min-width: $tabletSmallP1) {
+                width: 6.9rem;
+            }
+            @media (min-width: $tabletP1) {
+                width: 7.8rem;
+            }
+        }
+    }
+
+    // .imprint__buttons
+
+    &__buttons {
+        @include windowButtonsStyles(2rem, 2.6rem);
+    }
+
+    // .imprint__logo
+
+    &__logo {
+        font-weight: 700;
+        font-size: 2.45rem;
+        line-height: 1.5;
+    }
+
+    // .imprint__logo--white
+
+    &__logo--white {
+    }
+
+    // .imprint__vector
+
+    &__vector {
+    }
+}
+.imprint--with-vector-icon {
+}
+.imprint--revert {
+}
