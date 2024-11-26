@@ -1,5 +1,5 @@
 .bottom-cta {
-    background-color: $secondary;
+    background-color: $tertinary;
     width: 100%;
     max-width: 100%;
     padding: 0;
@@ -71,7 +71,7 @@
         position: relative;
         max-width: 78.6rem;
         width: 100%;
-        background-color: $bottomCtaWindowBg;
+        background-color: rgba($primary, 0.06);
 
         &::before {
             @include pseudoInit(6rem, 0);
@@ -103,7 +103,7 @@
             @include pseudoInit(calc(100% - 0.4rem), 0.1rem);
             right: 0;
             top: 0;
-            background-color: $windowLineColor;
+            background-color: rgba($burger, 0.3);
         }
     }
 
@@ -115,7 +115,7 @@
         pointer-events: none;
         z-index: 3;
         width: 100%;
-        color: $lexiconLink;
+        color: $linkSecondary;
         & > svg {
             width: 100%;
             aspect-ratio: 621/496;
@@ -207,7 +207,7 @@
 
     &__input {
         padding: 1.4rem 2rem 1.2rem 2rem;
-        border: 1px solid $inputBorder;
+        border: 1px solid $border;
         width: 100%;
         border-radius: 3rem;
         font-weight: 500;

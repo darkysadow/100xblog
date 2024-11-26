@@ -19,7 +19,7 @@
         font-weight: 500;
         background-color: transparent;
         &::placeholder {
-            color: rgba($textColor, .5);
+            color: rgba($text, .5);
         }
     }
 

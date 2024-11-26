@@ -111,13 +111,13 @@
         height: 70%;
         display: flex;
         align-items: end;
-        background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, $black 0%, $transparent 100%);
         border-bottom-left-radius: 2.4rem;
         border-bottom-right-radius: 2.4rem;
         z-index: 1;
 
         & p {
-            color: #fff;
+            color: $white;
             padding-left: 2.5rem;
             padding-right: 2rem;
             padding-bottom: 2.1rem;

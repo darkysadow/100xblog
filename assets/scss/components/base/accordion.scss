@@ -4,7 +4,7 @@
     // .accordion__item
 
     &__item {
-        border: 1px solid rgba($lexiconLink, .25);
+        border: 1px solid rgba($linkSecondary, .25);
         margin-top: 1.5rem;
         border-radius: 1.5rem;
         position: relative;
@@ -23,7 +23,7 @@
             }
         }
         &:has(.opened) {
-            background-color: $secondary;
+            background-color: $quartenary;
             border: 1px solid transparent;
             &:before {
                 opacity: 1;
@@ -45,7 +45,7 @@
         h4 {
             letter-spacing: -.02em;
             font-size: 1.6rem;
-            color: rgba($filterText, .85);
+            color: rgba($textMuted, .85);
             @media(min-width: $tabletSmallP1) {
                 font-size: 1.8rem;
             }
@@ -92,7 +92,7 @@
             min-height: 0;
         }
         p {
-            color: rgba($lexiconLink, .85);
+            color: rgba($linkSecondary, .85);
             letter-spacing: -.02em;
             font-size: 1.2rem;
             line-height: 1.8;
@@ -103,7 +103,7 @@
     .accordion__item {
         border-color: rgba($white,.25);
         &:has(.opened) {
-            background-color:#12161A;
+            background-color: $selectBgDark;
         }
     }
     .accordion__head {

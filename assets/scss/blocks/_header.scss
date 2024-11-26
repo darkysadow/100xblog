@@ -25,7 +25,7 @@
 
     &::before {
         @include pseudoInit(100%, 0.1rem);
-        background-color: $windowLineColor;
+        background-color: rgba($burger, 0.1);
         transition: 0.3s all;
         opacity: 0;
         bottom: 0;
@@ -95,7 +95,7 @@
             }
 
             a {
-                color: $textColor;
+                color: $text;
                 transition: 0.3s all;
                 display: block;
 

@@ -92,7 +92,7 @@
     transform: translateX(-50%);
     width: calc(100% - 0.8rem - #{$paddingSizeX} * 2);
     height: 0rem;
-    border: 0.1rem solid $lineColor;
+    border: 0.1rem solid rgba($black, 0.2);
 }
 
 @mixin bottomCTASVGStyles($width, $height) {
@@ -169,16 +169,16 @@
         border-radius: 10rem;
 
         &:nth-child(1) {
-            background-color: $buttonYellow;
+            background-color: $warning;
         }
 
         &:nth-child(2) {
-            background-color: $buttonGreen;
+            background-color: $success;
             width: 0.795rem;
         }
 
         &:nth-child(3) {
-            background-color: $buttonRed;
+            background-color: $error;
         }
     }
 }

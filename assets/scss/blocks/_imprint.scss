@@ -81,7 +81,7 @@
     // .imprint__address
 
     &__address {
-        color: $lexiconLink;
+        color: $linkSecondary;
         position: relative;
         z-index: 2;
         @media (min-width: $tabletP1) {

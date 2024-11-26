@@ -118,17 +118,13 @@
         }
         opacity: 0.5;
         padding: 1.6rem 2.1rem 1.5rem 6rem;
-        border: 1px solid $inputBorder;
+        border: 1px solid $borderTertinary;
         border-radius: 10rem;
 
         & > input {
             width: 100%;
             @include adaptiveProperty('font-size', 16, 12);
             line-height: 1.5;
-
-            &::placeholder {
-                color: $placeholder;
-            }
 
             &:focus {
                 outline-offset: 0;
@@ -156,8 +152,8 @@
         & > a {
             @include categoryButtonStyles();
             font-weight: 400;
-            background-color: $filterColor;
-            color: $textColor;
+            background-color: $secondary;
+            color: $text;
 
         }
 
