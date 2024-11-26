@@ -1,0 +1,241 @@
+.bottom-cta {
+    background-color: $secondary;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    // .bottom-cta--hide-visuals
+
+    &--hide-visuals {
+        @extend .bottom-cta;
+        .bottom-cta {
+            &__level-vector,
+            &__raise-vector,
+            &__cursor {
+                display: none
+            }
+        }
+    }
+
+    // .bottom-cta__level-vector
+
+    &__level-vector {
+        @include bottomCTASVGStyles(50.8rem, 12.8rem);
+        left: calc(100% - 20vw);
+    }
+
+    // .bottom-cta__raise-vector
+
+    &__raise-vector {
+        @include bottomCTASVGStyles(52.5rem, 15.9rem);
+        right: calc(100% - 20vw);
+    }
+
+    // .bottom-cta__wrapper
+
+    &__wrapper {
+        position: relative;
+        @include padTopPadBot(14.7rem, 26.5rem);
+        @extend .padding;
+        @include centerDiv();
+        flex-direction: column;
+
+        @media (min-width: $tabletSmallP1) {
+            @include padTopPadBot(16rem, 27.4rem);
+        }
+    }
+
+    // .bottom-cta--hide-graphics
+
+    &--hide-graphics {
+
+        &>.bottom-cta__left-image,
+        &>.bottom-cta__right-image {
+            display: none;
+        }
+    }
+
+    // .bottom-cta__window
+
+    &__window {
+        border-radius: 3.9rem;
+        border-top: 0.5rem;
+        border-bottom: 1rem;
+        border-right: 0.1rem;
+        border-left: 0.1rem;
+        border-style: solid;
+        border-color: $primary;
+        padding-top: 3.4rem;
+        position: relative;
+        max-width: 78.6rem;
+        width: 100%;
+        background-color: $bottomCtaWindowBg;
+
+        &::before {
+            @include pseudoInit(6rem, 0);
+            @include centerByHorizontal();
+            border: 0.5rem solid $primary;
+            bottom: 1.9rem;
+            border-radius: 1rem;
+
+            @media (min-width: $tabletSmallP1) {
+                width: 6.9rem;
+            }
+            @media (min-width: $tabletP1) {
+                width: 7.8rem;
+            }
+        }
+    }
+
+    // .bottom-cta__content
+
+    &__content {
+        padding: 8.2rem 3.6rem 11.6rem 3.6rem;
+        position: relative;
+        @include centerDiv();
+        flex-direction: column;
+        @media (min-width: $tabletSmallP1) {
+            @include padTopPadBot(8.3rem, 9.5rem);
+        }
+        &:before {
+            @include pseudoInit(calc(100% - 0.4rem), 0.1rem);
+            right: 0;
+            top: 0;
+            background-color: $windowLineColor;
+        }
+    }
+
+    // .bottom-cta__svg-shadow
+
+    &__svg-shadow {
+        @include centerByHorizontal();
+        top: 5.9rem;
+        pointer-events: none;
+        z-index: 3;
+        width: 100%;
+        color: $lexiconLink;
+        & > svg {
+            width: 100%;
+            aspect-ratio: 621/496;
+        }
+    }
+
+    // .bottom-cta__icon
+
+    &__icon {
+        @include padTopPadBot(1.6rem, 1.6rem);
+        width: 5.5rem;
+        height: 7.4rem;
+        position: relative;
+    }
+
+    // .bottom-cta__evenlope
+
+    &__evenlope {
+        @include centerByPosition();
+        z-index: 0;
+        width: 4.5rem;
+        color: $primary;
+        @media (min-width: $tabletSmallP1) {
+            width: 5.5rem;
+        }
+    }
+
+    // .bottom-cta__cursor
+
+    &__cursor {
+        position: absolute;
+        z-index: 1;
+        top: 55%;
+        left: 75%;
+
+        // [class]--hidden
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    // .bottom-cta__heading
+
+    &__heading {
+        margin-top: 2.8rem;
+        line-height: 1.35;
+        @include adaptiveProperty('font-size', 55, 28);
+        font-weight: 700;
+        text-align: center;
+
+        &>span {
+            color: $primary;
+        }
+    }
+
+    // .bottom-cta__text
+
+    &__text {
+        margin-top: 0.5rem;
+        @include adaptiveProperty('font-size', 16, 13);
+        text-align: center;
+        line-height: 1.85;
+        @media (min-width: $tabletSmallP1) {
+            margin-top: 0.4rem;
+            line-height: 1.5;
+        }
+    }
+
+    // .bottom-cta__buttons
+
+    &__buttons {
+        @include windowButtonsStyles(1.5rem, 2.9rem);
+    }
+
+    // .bottom-cta__form
+
+    &__form {
+        margin-top: 6.4rem;
+        max-width: 76.6rem;
+        width: 100%;
+        position: relative;
+        @media (min-width: $tabletSmallP1) {
+            margin-top: 8.5rem;
+        }
+    }
+
+    // .bottom-cta__input
+
+    &__input {
+        padding: 1.4rem 2rem 1.2rem 2rem;
+        border: 1px solid $inputBorder;
+        width: 100%;
+        border-radius: 3rem;
+        font-weight: 500;
+        @include adaptiveProperty('font-size', 16, 12);
+        line-height: 1.5;
+    
+        @media (min-width: $tabletSmallP1) {
+            padding: 1.5rem 7.5rem 1.6rem 2.1rem;
+        }
+    }
+
+    &__submit {
+        position: absolute !important;
+        min-height: 100% !important;
+        width: 100%;
+        margin-top: 1.5rem;
+
+        @media (min-width: $tabletSmallP1) {
+            position: absolute;
+            top: 0.06rem;
+            right: 0.1rem;
+            width: fit-content;
+            line-height: 2;
+            padding: 0.95rem 5.1rem;
+            margin: 0;
+            & > svg {
+                display: none;
+            }
+        }
+    }
+}

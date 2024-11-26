@@ -1,0 +1,133 @@
+
+.accordion {
+    margin-top: 3rem;
+    // .accordion__item
+
+    &__item {
+        border: 1px solid rgba($lexiconLink, .25);
+        margin-top: 1.5rem;
+        border-radius: 1.5rem;
+        position: relative;
+        transition: .3s all;
+        &:before {
+            @include pseudoInit(calc(100% + 0.2rem), calc(100% + 0.2rem));
+            @include centerByPosition();
+            border-radius: 1.5rem;
+            border: 1px solid $primary;
+            border-bottom: 3px solid $primary;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s all;
+            @media(min-width: $tabletSmallP1) {
+                border: 2px solid $primary;
+            }
+        }
+        &:has(.opened) {
+            background-color: $secondary;
+            border: 1px solid transparent;
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    // .accordion__head
+
+    &__head {
+        padding: 2rem 2rem 2rem 2.5rem;
+        gap: 1rem;
+        box-sizing: border-box;
+        cursor: pointer;
+        align-items: flex-start;
+        @media(min-width: $tabletSmallP1) {
+            padding: 2.3rem 2.5rem;
+        }
+        h4 {
+            letter-spacing: -.02em;
+            font-size: 1.6rem;
+            color: rgba($filterText, .85);
+            @media(min-width: $tabletSmallP1) {
+                font-size: 1.8rem;
+            }
+        }
+        button {
+            @include centerDiv();
+            min-width: 1.8rem;
+            height: 28px;
+            svg {
+                transform: rotate(180deg);
+                transition: .3s all;
+            }
+            svg path {
+                transition: .3s all;
+            }
+        }
+        &.opened {
+            button {
+                svg {
+                    transform: rotate(0deg);
+                }
+                svg path {
+                    fill: $primary;
+                }
+            }
+            & + .accordion__content {
+                grid-template-rows: 1fr;
+                padding: 0 2.5rem 2.8rem;
+                margin-top: -1rem;
+            }
+        }
+    }
+
+    // .accordion__content
+
+    &__content {
+        padding: 0 2.5rem;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: .3s all;
+        overflow: hidden;
+        margin-top: 0;
+        & > div {
+            min-height: 0;
+        }
+        p {
+            color: rgba($lexiconLink, .85);
+            letter-spacing: -.02em;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+    }
+}
+.dark-mode {
+    .accordion__item {
+        border-color: rgba($white,.25);
+        &:has(.opened) {
+            background-color:#12161A;
+        }
+    }
+    .accordion__head {
+        h4 {
+            color: rgba($white, .85);
+        }
+        button {
+            svg path {
+                transition: .3s all;
+                fill: $white;
+            }
+        }
+        &.opened {
+            button {
+                svg path {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+    .accordion__content {
+        p {
+            color: rgba($white, .85);
+        }
+
+    }
+}

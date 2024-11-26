@@ -1,58 +1,29 @@
 .btn {
-    cursor: pointer;
-    outline: none;
+    @include buttonStyles();
+}
 
-    width: 100%;
-    min-height: 5rem;
-    padding: 1.5rem 2.3rem;
-
-    border: 1px solid transparent;
-    border-radius: 1.5rem;
-    box-sizing: border-box;
-
-    display: flex;
+.link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include adaptiveProperty("font-size", 18, 16);
+    font-weight: 600;
+    line-height: 1.5;
     gap: 1rem;
-
-    white-space: nowrap;
-    color: $white;
-    @include adaptiveProperty("font-size", 15, 15);
-    font-weight: 500;
-    min-width: 23.5rem;
+    color: rgb(var(--primary));
     transition: .3s all;
     img,svg {
-        min-width: 1.7rem;
-        max-width: 1.7rem;
-        height: 1.8rem;
         position: relative;
-        top: 0;
-        transition: .3s all;
-    }
-    &--outline {
-        min-width: unset;
-        padding: 0;
-        color: $secondary;
-        background-color: transparent;
-        @include adaptiveProperty("font-size", 16, 16);
-        font-weight: 600;
-        &:hover {
-            background-color: transparent;
-            img, svg {
-                transform: scale(1.1);
-            }
+        left: 0;
+        transition: 0.3s all;
+        path {
+            fill: rgb(var(--primary));
+            transition: .3s all;
         }
     }
-    &--dark {
-        background-color: $primary;
-    }
-    &--with-border{
-        border: 1px solid $secondary;
-        &:hover{
-            background-color: $secondary;
-            color: $white;
+    &:hover {
+        filter: brightness(90%);
+        img,svg {
+            left: 5px;
         }
     }
 }
-

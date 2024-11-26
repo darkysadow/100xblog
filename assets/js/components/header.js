@@ -1,26 +1,21 @@
 export function initHeader() {
-    const minimize = document.querySelector('.minimize')
-    minimize.addEventListener('click', function(e) {
-        if(minimize.classList.contains('minimize-active') && !e.target.closest('.header__burger')) {
-            minimize.classList.remove('minimize-active')
+    const header = document.querySelector('.header')
+    const burgerBtn = document.querySelector('.header__burger')
+    const menuWhitespace = document.querySelector('.header__whitespace')
 
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 108) {
+            header.classList.add('scrolled')
+        } else {
+            header.classList.remove('scrolled')
         }
     })
-    document.querySelector('.header__burger').addEventListener('click', function() {
-        minimize.classList.add('minimize-active')
+
+    burgerBtn.addEventListener('click', () => {
+        header.classList.toggle('opened')
     })
-    document.querySelector('.modal-menu__close').addEventListener('click', function() {
-        minimize.classList.remove('minimize-active')
-    })
-    document.querySelectorAll('.modal-menu__body ul li a').forEach(link => {
-        link.addEventListener('click', function() {
-            minimize.classList.remove('minimize-active')
-        })
-    })
-    document.querySelector('.scroll').addEventListener('scroll', function() {
-        
-        lazyLoad()
-        initAnimation()
+    menuWhitespace.addEventListener('click', function() {
+        header.classList.remove('opened')
     })
 }
 lazyLoad()

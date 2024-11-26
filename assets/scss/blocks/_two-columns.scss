@@ -1,0 +1,126 @@
+.two-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    align-items: flex-start;
+
+    @media (min-width: $tabletP1) {
+        flex-direction: row;
+    }
+    @media (min-width: $tabletSmallP1) {
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+        gap: 6.8rem;
+    }
+    @media (min-width: $tabletLargeP1) {
+        margin-top: 24rem;
+        margin-bottom: 24rem;
+    }
+
+    & > img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 48%;
+        pointer-events: none;
+    }
+    // .two-columns__text-block
+
+    &__text-block {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $tabletP1) {
+            width: 59.3%;
+        }
+    }
+
+    // .two-columns__title
+
+    &__title {
+        margin: 0;
+        h2 {
+            @include adaptiveProperty('font-size', 50, 28);
+        }
+        mark {
+            color: $primary;
+        }
+    }
+
+    // .two-columns--revert
+
+    &--revert {
+        @extend .two-columns;
+        @media (min-width: $tabletP1) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    // .two-columns__text
+
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p {
+            @include adaptiveProperty('font-size', 16, 13);
+            margin-top: 3.5rem;
+            @media (min-width: $tabletSmallP1) {
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    // .two-columns__image
+
+    &__image {
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        border-radius: 2.4rem;
+        aspect-ratio: 416/578;
+
+        @media (min-width: $tabletP1) {
+            width: 31.9%;
+        }
+
+        & img {
+            z-index: 0;
+            position: absolute;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 2.4rem;
+            aspect-ratio: 416/578;
+        }
+    }
+
+    // .two-columns__info
+
+    &__info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: end;
+        background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        border-bottom-left-radius: 2.4rem;
+        border-bottom-right-radius: 2.4rem;
+        z-index: 1;
+
+        & p {
+            color: #fff;
+            padding-left: 2.5rem;
+            padding-right: 2rem;
+            padding-bottom: 2.1rem;
+        }
+    }
+}

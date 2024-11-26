@@ -1,0 +1,48 @@
+.long-text {
+    flex-direction: column;
+    @include padTopPadBot(17rem, 13.6rem);
+    position: relative;
+
+    @media (min-width: $tabletSmallP1) {
+        @include padTopPadBot(24rem, 26.5rem);
+    }
+
+    // .long-text__text
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & > p {
+            margin-top: 6rem;
+        }
+    }
+
+    & > img {
+        @include centerByHorizontal();
+        pointer-events: none;
+        top: 0;
+        width: 48%;
+    }
+
+    &--center {
+        @extend .long-text;
+        text-align: center !important;
+        max-width: (calc(115.0rem) + $containerPaddingS * 2);
+        @media (min-width: 43.0rem) {
+            max-width: (calc(115.0rem) + $containerPaddingM * 2);
+        }
+        @media (min-width: $tabletLargeP1) {
+            max-width: (calc(115.0rem) + $containerPadding * 2);
+        }
+    }
+
+    // .long-text__title
+
+    &__title {
+        margin: 0;
+        & span {
+            color: $primary;
+        }
+    }
+}

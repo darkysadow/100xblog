@@ -1,0 +1,176 @@
+.pagination {
+    flex-direction: row;
+    gap: 1.5rem;
+
+    &:has(.pagination__show--center) {
+        @include centerDiv();
+    }
+
+    &:has([max="0"]) {
+        display: none;
+    }
+
+    // .pagination__show
+
+    &__show {
+        font-size: 1.6rem;
+        line-height: 1.5;
+        color: $filterText;
+        gap: 0.7rem;
+        padding-right: 1.5rem;
+        position: relative;
+        display: none;
+
+        @media(min-width: $tabletSmallP1) {
+            @include centerDiv();
+            font-size: 1.4rem;
+        }
+
+        & > select {
+            background-color: $tertinary;
+            outline: none;
+            border-radius: 0.6rem;
+            font-size: 1.7rem;
+            line-height: 1.35;
+            color: $quartenary;
+            padding: 0.4rem 2.7rem 0.4rem 1.2rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3984 1.92144L5.92188 6.2105C5.78125 6.32769 5.64062 6.37457 5.5 6.37457C5.38281 6.37457 5.24219 6.32769 5.125 6.23394L0.648438 1.94488C0.414063 1.73394 0.414063 1.35894 0.625 1.148C0.835938 0.913628 1.1875 0.913628 1.42188 1.12457L5.5 5.03863L9.625 1.10113C9.83594 0.890191 10.2109 0.890191 10.4219 1.12457C10.6328 1.3355 10.6328 1.7105 10.3984 1.92144Z' fill='%230F3B44'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: right 7px center;
+            background-size: 10px auto;
+            cursor: pointer;
+
+            @media (min-width: $tabletSmallP1) {
+                font-size: 1.5rem;
+                padding: 0.3rem 2.7rem 0.3rem 1rem;
+            }
+        }
+
+        // .pagination__show--center
+
+        &--center {
+            @extend .pagination__show;
+            @include centerDiv();
+        }
+
+        &:after {
+            @media(min-width: $tabletSmallP1) {
+                @include centerByVertical();
+                @include pseudoInit(0.1rem, 74%);
+                background-color: $paginationDivider;
+                right: 0;
+            }
+        }
+    }
+
+    // .pagination__pages
+
+    &__pages {
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1.6rem;
+        color: $filterText;
+
+        @media (min-width: $tabletSmallP1) {
+            font-size: 1.4rem;
+            gap: .8rem;
+        }
+
+        input {
+            border: 1px solid #AFC0C4;
+            border-radius: .6rem;
+            width: 4.7rem;
+            text-align: center;
+            padding: 2px;
+            color: ($filterText, 0.7);
+            font-weight: 500;
+            font-size: 1.6rem;
+            outline: none;
+
+            @media (min-width: $tabletSmallP1) {
+                width: 3.6rem;
+                padding: 2px;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    // .pagination__arrow
+
+    &__arrow {
+        @include centerDiv();
+        @include squareDiv(3rem);
+        border-radius: 0.6rem;
+        background-color: rgba($primary, .2);
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2rem auto;
+        transition: all .3s;
+        opacity: 1;
+        color: $primary;
+
+        @media (min-width: $tabletSmallP1) {
+            @include squareDiv(2.7rem);
+        }
+
+        &[disabled] {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        img,
+        svg {
+            width: 0.9rem;
+            height: auto;
+
+            @media (min-width: $tabletSmallP1) {
+                width: 0.7rem;
+
+            }
+
+            path {
+                fill: rgb(var(--primary));
+                transition: all .3s;
+            }
+        }
+
+        &:hover {
+            background-color: rgb(var(--primary));
+
+            img,
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+
+        }
+
+        // .blogs__arrow--prev
+
+        &--prev {
+
+            img,
+            svg {
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    // .pagination__page
+
+    &__page {
+        [max="1"] {
+            pointer-events: none;
+        }
+
+        &:has([max="1"]) {
+            &+span {
+                pointer-events: none;
+
+            }
+        }
+    }
+}

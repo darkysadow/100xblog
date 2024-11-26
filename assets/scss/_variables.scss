@@ -32,13 +32,15 @@ $adaptivePropertyMinViewport: 430;
 // base
 $white: #ffffff;
 $black: #000000;
-$transparent: rgba(0, 0, 0, 0);
+$transparent: #00000000;
 
 $textColor: #293B48;
 $primary: #6D83FF;
-$secondary: #EDF2F3;
 $secondary: #F6F8F8;
+$tertinary: #E7F1F3;
+$quartenary: #0E3B44;
 $filterColor: #E8F3F5;
+$filterText: #64748B;
 $lineColor: #00000033;
 $windowLineColor: #2637984D; 
 $border:#CDDFE1;
@@ -47,8 +49,11 @@ $footerBg: #282A2B;
 $buttonYellow: #F8D65F;
 $buttonGreen: #69C292;
 $buttonRed: #F15F5F;
-$bottomCtaWindowBg: #5971F80F;
+$bottomCtaWindowBg: #EDF0F7;
+$placeholder: #7B9CA3;
 $inputBorder: #B5C8CC;
+$burger: #4F748E;
+$paginationDivider: #94A3B8;
 
 // Fonts
 $primary-font: 'Poppins', sans-serif;

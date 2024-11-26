@@ -1,0 +1,195 @@
+.footer {
+    background-color: $footerBg;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    max-width: 100%;
+    color: $white;
+
+    // .footer__container
+
+    &__container {
+        @extend .padding;
+        @include padTopPadBot(10.8rem !important, 6.9rem !important);
+
+        @media (min-width: $tabletSmallP1) {
+            @include padTopPadBot(12.4rem !important, 5.9rem !important);
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        font-size: 3.8rem;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+    // .footer__nav
+
+    &__nav {
+        margin-top: 1.5rem;
+        flex-direction: column-reverse;
+
+        @media (min-width: $tabletSmallP1) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: -2.1rem;
+            padding-bottom: 4.5rem;
+        }
+    }
+
+    // .footer__links
+
+    &__links {
+        padding-bottom: 9rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @media (min-width: $tabletSmallP1) {
+            padding-bottom: 0.6rem;
+        }
+    }
+
+
+    // .footer__social
+
+    &__social {
+        align-items: center;
+        justify-content: space-between;
+        @include padTopPadBot(3rem, 3rem);
+        position: relative;
+
+        @media (min-width: $tabletSmallP1) {
+            @include padTopPadBot(0, 0);
+            gap: 3.4rem;
+        }
+
+        &::after,
+        &::before {
+            @include pseudoInit(100%);
+            border: 1px solid rgba($white, 0.35);
+            left: 0;
+
+            @media (min-width: $tabletSmallP1) {
+                display: none;
+            }
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    // .footer__icon-link
+
+    &__icon-link {
+        @include squareDiv(4.5rem);
+        @include centerDiv();
+
+        & > a {
+            color: $white;
+        }
+
+        @media (min-width: $tabletSmallP1) {
+            @include squareDiv(3.8rem);
+        }
+    }
+    
+    // .footer__link
+
+    &__link {
+        width: 50%;
+
+        &:first-child {
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+            & > a {
+                padding: 0;
+            }
+        }
+        &:nth-child(even) {
+            margin-top: 0.6rem;
+
+            @media (min-width: $tabletSmallP1) {
+                margin-top: 0;
+            }
+        }
+
+        & > a {
+            @include adaptiveProperty('font-size', 16, 14);
+            line-height: 1.5;
+            color: $white;
+            @include padTopPadBot(1rem, 1rem);
+            width: 100%;
+            display: inline-flex;
+
+            @media (min-width: $tabletSmallP1) {
+                @include padTopPadBot(0.6rem, 0.6rem);
+            }
+        }
+        // .footer__link--active
+
+        &--active {
+            @extend .footer__link;
+            width: 100%;
+        }
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        margin-top: 2rem;
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+
+        @media (min-width: $tabletSmallP1) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 3.5rem;
+            position: relative;
+
+            &::before {
+                @include pseudoInit(100%);
+                left: 0;
+                top: 0;
+                border: 1px solid rgba($white, 0.35);
+            }
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        text-wrap: nowrap;
+        & > p {
+            font-size: 1.6rem;
+            line-height: 1.43;
+        }
+    }
+
+    // .footer__terms
+
+    &__terms {
+        width: 100%;
+        justify-content: space-between;
+        text-decoration: underline;
+        & > a {
+            color: $white;
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
+
+        @media (min-width: $tabletSmallP1) {
+            justify-content: flex-end;
+            gap: 6.2rem;
+        }
+    }
+}
